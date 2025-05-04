@@ -1,0 +1,206 @@
+/* Base colors - using a more refined corporate palette */
+:root {
+  --primary: #2563eb; /* More professional blue */
+  --primary-hover: #1d4ed8; /* Darker blue for hover states */
+  --secondary: #64748b; /* Neutral slate blue-grey */
+  --light-bg: #f8fafc; /* Light background */
+  --border: #e2e8f0; /* Subtle border color */
+  --text: #334155; /* Main text color */
+  --text-light: #64748b; /* Secondary text color */
+}
+ 
+/* Header styling - unchanged */
+.value-research-header {
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+ 
+.portfolio-header {
+  background-color: #fff;
+}
+ 
+ 
+.rupee::before {
+  content: "₹";
+}
+ 
+.user-avatar {
+  cursor: pointer;
+}
+ 
+.card-title {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+ 
+.portfolio-header .d-flex {
+  margin-bottom: 1.5rem; /* Adds space between the header and the next section */
+}
+ 
+/* Button styling - unchanged */
+button.btn-primary {
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text */
+  border: none; /* Remove border */
+  padding: 0.5rem 1rem; /* Add padding */
+  font-size: 1rem; /* Adjust font size */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+ 
+button.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+ 
+/* Investment type tabs */
+.investment-type-tabs {
+  margin-bottom: 20px;
+}
+ 
+.investment-type-tabs .nav-link {
+  color: #333;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+ 
+.investment-type-tabs .nav-link.active {
+  color: #fff;
+  background-color: #007bff;
+}
+ 
+.investment-type-tabs .nav-link:hover:not(.active) {
+  background-color: #e9ecef;
+}
+ 
+/* Uniform badge styling */
+.type-badge {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  min-width: 90px;
+  text-align: center;
+}
+ 
+/* Badge colors - lighter and more subtle palette */
+.badge.type-stock {
+  background-color: #d1fae5; /* Light emerald green */
+  color: #065f46; /* Darker green for text */
+}
+ 
+.badge.type-bond {
+  background-color: #e0e7ff; /* Light indigo */
+  color: #4338ca; /* Darker indigo for text */
+}
+ 
+.badge.type-mutual-fund {
+  background-color: #e0f2fe; /* Light sky blue */
+  color: #0369a1; /* Darker blue for text */
+}
+ 
+.badge.type-gold-bond {
+  background-color: #fef3c7; /* Light amber */
+  color: #92400e; /* Darker amber for text */
+}
+ 
+/* Table styling */
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+}
+ 
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+ 
+/* Card styling */
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+ 
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+ 
+/* Button outlines */
+.btn-outline-primary,
+.btn-outline-danger,
+.btn-outline-info {
+  padding: 0.25rem 0.5rem;
+}
+ 
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+ 
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+ 
+.btn-outline-info:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+ 
+/* Fancy Header Styling */
+.fancy-title {
+  font-family: 'Poppins', sans-serif; /* Modern and professional font */
+  font-weight: 700; /* Bold for emphasis */
+  font-size: 2.5rem; /* Larger font size for prominence */
+  color: #004c6a; /* Corporate blue color */
+  letter-spacing: 1px; /* Slight spacing for elegance */
+  text-transform: uppercase; /* Make it stand out */
+  margin: 0; /* Remove default margins */
+}
+ 
+.fancy-subtitle {
+  font-family: 'Poppins', sans-serif; /* Same font for consistency */
+  font-weight: 400; /* Regular weight for subtitle */
+  font-size: 1.2rem; /* Slightly smaller font size */
+  color: #6c757d; /* Subtle gray color */
+  margin: 0; /* Remove default margins */
+  letter-spacing: 0.5px; /* Slight spacing for a clean look */
+}
+ 
+/* Add subtle animation for the title */
+.fancy-title {
+  animation: fadeIn 1.5s ease-in-out;
+}
+ 
+.fancy-subtitle {
+  animation: fadeIn 2s ease-in-out;
+}
+ 
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+/* Add space between the Export button and Info modal button */
+.btn-outline-info {
+  margin-right: 10px; /* Add space to the right of the Info modal button */
+}
+ 
+.btn-outline-primary {
+  margin-left: 10px; /* Optional: Add space to the left of the Export button */
+}
+ 

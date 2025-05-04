@@ -1,0 +1,27 @@
+.footer {
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: auto;
+    
+body {
+    display: flex;
+   flex-direction: column;
+    min-height: 100vh;
+   margin: 0;
+     }
+    
+main {
+     flex: 1;
+   }
+    
+}
+
+.footer p {
+    margin: 10;
+}

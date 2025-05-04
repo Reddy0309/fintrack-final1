@@ -1,0 +1,26 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balthazar&display=swap" rel="stylesheet">
+
+<header class="value-research-header" style="background-color: #f8f9fa">
+  <div class="container d-flex justify-content-between align-items-center py-1">
+    <div class="d-flex align-items-center">
+      <!-- <img src="https://res.cloudinary.com/dixvcdl4j/image/upload/v1745230278/shared_image__2_-removebg-preview_ol97ao.png"
+           alt="FINTRACK" height="70" class="me-3" /> -->
+           <img src="assets/images/logo2.png" alt="FINTRACK" height="70" class="me-0" />
+           <!-- <h6 class="mb-0 fancy-title">FINTRACK</h6> -->
+    </div>
+    <div class="header-center text-center">
+      <!-- <h1 class="mb-0 fancy-title">FINTRACK</h1>
+      <p class="mb-0 fancy-subtitle">Where Finances Meet Clarity</p> -->
+    </div>
+    <div class="d-flex align-items-center" *ngIf="shouldShowAvatarAndLogout()">
+      <div class="user-avatar me-2">
+        <span class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
+              style="width: 32px; height: 32px;">
+          {{ userInitial }}
+        </span>
+      </div>
+      </div>
+  </div>
+</header>

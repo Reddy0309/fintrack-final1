@@ -1,0 +1,135 @@
+<br>
+<div class="container" style="min-height: 90vh;">
+  <div class="row justify-content-center align-items-center h-100">
+    <!-- Left Side: Image -->
+    <div class="col-lg-6 d-none d-lg-block text-center">
+      <img src="assets/images/hero.png" alt="Illustration" class="img-fluid" style="max-height: 500px;" />
+    </div>
+
+    <!-- Right Side: Form Card -->
+    <div class="col-lg-6">
+      <div class="card p-4 shadow-lg" style="max-width: 500px; margin: auto;">
+        <div class="text-center mb-2">
+          <img src="assets/images/logo2.png" alt="FINTRACK" height="70" class="me-0" />
+        </div>
+
+        <h4 class="text-center mb-2" style="color: #004c6a; font-family: 'Poppins', sans-serif; font-weight: bold;">
+          &nbsp;&nbsp;REGISTER
+        </h4>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="px-2">
+          <!-- All your form fields stay exactly as they are... -->
+          <!-- No changes needed inside the form itself -->
+          <div class="mb-2">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" formControlName="name" class="form-control" />
+            <div *ngIf="submitted && f['name'].errors" class="text-danger">
+                <small *ngIf="f['name'].errors['required']">Name is required.</small>
+                <small *ngIf="f['name'].errors['pattern']">Name must contain only letters (A-Z, a-z).</small>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" />
+            <div *ngIf="submitted && f['email'].errors" class="text-danger">
+                <small *ngIf="f['email'].errors['required']">Email is required.</small>
+                <small *ngIf="f['email'].errors['pattern']">Invalid email format.</small>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control" />
+            <div *ngIf="submitted && f['password'].errors" class="text-danger">
+                <small *ngIf="f['password'].errors['required']">Password is required.</small>
+                <small *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters.</small>
+                <small *ngIf="f['password'].errors['pattern']">Password must contain an uppercase letter and a
+                    special character.</small>
+            </div>
+            <!-- Password Strength Meter -->
+            <div *ngIf="f['password'].value" class="mt-1">
+                <div class="progress" style="height: 3px; max-width: 800px;">
+                    <div class="progress-bar" [ngClass]="getStrengthClass(passwordStrength)"
+                        [style.width.%]="passwordStrength">
+                    </div>
+                </div>
+                <small [ngClass]="getStrengthTextClass(passwordStrength)">
+                    Strength: {{ getStrengthLabel(passwordStrength) }}
+                </small>
+            </div>
+
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-2">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" />
+            <div *ngIf="submitted && f['confirmPassword'].errors" class="text-danger">
+                <small *ngIf="f['confirmPassword'].errors['required']">Please confirm your password.</small>
+            </div>
+            <div *ngIf="registerForm.errors?.['mismatch'] && submitted" class="text-danger">
+                <small>Passwords do not match.</small>
+            </div>
+        </div>
+          
+
+        <!-- Security Question -->
+        <div class="row mb-2">
+            <!-- Security Question -->
+            <div class="col-6 pe-1">
+              <label for="securityQuestion" class="form-label">Security Question</label>
+              <select id="securityQuestion" formControlName="securityQuestion" class="form-control">
+                <option value="">Select a question</option>
+                <option *ngFor="let question of securityQuestions" [value]="question">{{ question }}</option>
+              </select>
+              <div *ngIf="submitted && f['securityQuestion'].errors" class="text-danger">
+                <small *ngIf="f['securityQuestion'].errors['required']">Security question is required.</small>
+              </div>
+            </div>
+          
+            <!-- Security Answer -->
+            <div class="col-6 ps-1">
+              <label for="securityAnswer" class="form-label">Answer</label>
+              <input type="text" id="securityAnswer" formControlName="securityAnswer" class="form-control" />
+              <div *ngIf="submitted && f['securityAnswer'].errors" class="text-danger">
+                <small *ngIf="f['securityAnswer'].errors['required']">Answer is required.</small>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Already have account -->
+          <div class="text-center mb-3">
+            <span>Already have an account?
+              <a routerLink="/login" class="text-decoration-none fw-bold" style="color: #004c6a;">Login</a>
+            </span>
+          </div>
+
+          <!-- Submit -->
+          <div class="d-flex justify-content-center pb-3">
+            <button type="submit" class="btn btn-primary" style="width: 100px;">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="showModal" class="modal fade show" tabindex="-1" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registration Successful</h5>
+        <button type="button" class="btn btn-secondary" aria-label="Close" (click)="closeModal()">X</button>
+      </div>
+      <div class="modal-body">
+        <p>Your account has been created successfully. You will now be redirected to the login page.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
